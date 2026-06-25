@@ -2,6 +2,11 @@
   "name": "ai-erp",
   "version": "0.1.0",
   "private": true,
+  "pnpm": {
+    "allowedDeprecatedVersions": {
+      "node-domexception": "*"
+    }
+  },
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "pnpm --filter web build",
