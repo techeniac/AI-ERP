@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard, Building2, Users, CreditCard, Flag,
-  Megaphone, ClipboardList, Activity, Shield, LogOut, Settings,
+  Megaphone, ClipboardList, Activity, Shield, LogOut, Settings, Package,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePlatformAuthStore } from "@/lib/stores/platform-auth.store";
@@ -20,6 +20,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Organizations", href: "/platform/organizations", icon: Building2 },
   { label: "Users", href: "/platform/users", icon: Users },
   { label: "Billing", href: "/platform/billing", icon: CreditCard },
+  { label: "Plans", href: "/platform/plans", icon: Package },
   { label: "Feature Flags", href: "/platform/feature-flags", icon: Flag },
   { label: "Announcements", href: "/platform/announcements", icon: Megaphone },
   { label: "Audit Logs", href: "/platform/audit-logs", icon: ClipboardList },

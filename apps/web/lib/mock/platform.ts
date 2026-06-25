@@ -1,6 +1,87 @@
 export type OrgPlan = "starter" | "growth" | "enterprise";
 export type OrgStatus = "active" | "trial" | "suspended" | "churned";
 
+export const ALL_MODULES = [
+  { key: "dashboard",   label: "Dashboard" },
+  { key: "crm",        label: "CRM" },
+  { key: "customers",  label: "Customers" },
+  { key: "support",    label: "Support" },
+  { key: "finance",    label: "Finance" },
+  { key: "hr",         label: "HR" },
+  { key: "operations", label: "Operations" },
+  { key: "procurement",label: "Procurement" },
+  { key: "documents",  label: "Documents" },
+  { key: "reports",    label: "Reports" },
+  { key: "ai",         label: "AI Assistant" },
+  { key: "analytics",  label: "Analytics" },
+] as const;
+
+export type ModuleKey = typeof ALL_MODULES[number]["key"];
+
+export interface SubscriptionPlan {
+  id: string;
+  slug: OrgPlan;
+  name: string;
+  tagline: string;
+  monthlyPriceAed: number;
+  annualPriceAed: number;
+  trialDays: number;
+  maxUsers: number;        // -1 = unlimited
+  maxStorageGb: number;   // -1 = unlimited
+  maxOrgs: number;
+  includedModules: ModuleKey[];
+  isActive: boolean;
+  color: "slate" | "blue" | "indigo";
+}
+
+export const mockSubscriptionPlans: SubscriptionPlan[] = [
+  {
+    id: "plan-starter",
+    slug: "starter",
+    name: "Starter",
+    tagline: "Perfect for small teams getting started",
+    monthlyPriceAed: 0,
+    annualPriceAed: 0,
+    trialDays: 14,
+    maxUsers: 10,
+    maxStorageGb: 5,
+    maxOrgs: 1,
+    includedModules: ["dashboard", "crm", "customers", "support", "documents"],
+    isActive: true,
+    color: "slate",
+  },
+  {
+    id: "plan-growth",
+    slug: "growth",
+    name: "Growth",
+    tagline: "For growing businesses that need more power",
+    monthlyPriceAed: 1499,
+    annualPriceAed: 14990,
+    trialDays: 0,
+    maxUsers: 50,
+    maxStorageGb: 50,
+    maxOrgs: 1,
+    includedModules: ["dashboard", "crm", "customers", "support", "finance", "hr", "operations", "documents", "reports"],
+    isActive: true,
+    color: "blue",
+  },
+  {
+    id: "plan-enterprise",
+    slug: "enterprise",
+    name: "Enterprise",
+    tagline: "Full-featured platform for large organisations",
+    monthlyPriceAed: 4999,
+    annualPriceAed: 49990,
+    trialDays: 0,
+    maxUsers: -1,
+    maxStorageGb: -1,
+    maxOrgs: 1,
+    includedModules: ["dashboard", "crm", "customers", "support", "finance", "hr", "operations", "procurement", "documents", "reports", "ai", "analytics"],
+    isActive: true,
+    color: "indigo",
+  },
+];
+
 export interface PlatformOrg {
   id: string;
   name: string;
