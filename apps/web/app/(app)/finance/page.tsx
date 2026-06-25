@@ -34,13 +34,13 @@ interface Expense {
 }
 
 const MOCK_EXPENSES: Expense[] = [
-  { id: "exp-001", date: "2026-06-20", submittedBy: "Arjun Sharma", department: "Engineering", category: "Travel", description: "Flight to Bangalore for client meeting — Infosys Q2 review", amount: 14500, status: "approved", receiptAttached: true },
-  { id: "exp-002", date: "2026-06-18", submittedBy: "Rahul Mehta", department: "Sales", category: "Entertainment", description: "Client dinner — Swiggy Instamart deal closure", amount: 8200, status: "pending", receiptAttached: true },
-  { id: "exp-003", date: "2026-06-17", submittedBy: "Ananya Singh", department: "Customer Success", category: "Software", description: "Zoom Pro annual subscription renewal", amount: 52000, status: "approved", receiptAttached: false },
-  { id: "exp-004", date: "2026-06-15", submittedBy: "Vikram Nair", department: "Operations", category: "Office Supplies", description: "Stationery and printer cartridges for operations team", amount: 3800, status: "reimbursed", receiptAttached: true },
-  { id: "exp-005", date: "2026-06-14", submittedBy: "Priya Patel", department: "Finance", category: "Training", description: "GST compliance workshop — ICAI Bengaluru", amount: 6500, status: "approved", receiptAttached: true },
-  { id: "exp-006", date: "2026-06-12", submittedBy: "Deepika Rao", department: "HR", category: "Recruitment", description: "LinkedIn Recruiter subscription — June", amount: 28000, status: "pending", receiptAttached: false },
-  { id: "exp-007", date: "2026-06-10", submittedBy: "Rahul Mehta", department: "Sales", category: "Travel", description: "Hotel accommodation — Mumbai client visits (3 nights)", amount: 18900, status: "reimbursed", receiptAttached: true },
+  { id: "exp-001", date: "2026-06-20", submittedBy: "Arjun Sharma", department: "Engineering", category: "Travel", description: "Flight to Abu Dhabi for client meeting — Emirates NBD Q2 review", amount: 1450, status: "approved", receiptAttached: true },
+  { id: "exp-002", date: "2026-06-18", submittedBy: "Rahul Mehta", department: "Sales", category: "Entertainment", description: "Client dinner at Nobu Dubai — Majid Al Futtaim deal closure", amount: 4200, status: "pending", receiptAttached: true },
+  { id: "exp-003", date: "2026-06-17", submittedBy: "Ananya Singh", department: "Customer Success", category: "Software", description: "Zoom Pro annual subscription renewal", amount: 3200, status: "approved", receiptAttached: false },
+  { id: "exp-004", date: "2026-06-15", submittedBy: "Vikram Nair", department: "Operations", category: "Office Supplies", description: "Stationery and printer cartridges for operations team", amount: 1800, status: "reimbursed", receiptAttached: true },
+  { id: "exp-005", date: "2026-06-14", submittedBy: "Priya Patel", department: "Finance", category: "Training", description: "UAE VAT compliance workshop — FTA Dubai", amount: 2500, status: "approved", receiptAttached: true },
+  { id: "exp-006", date: "2026-06-12", submittedBy: "Deepika Rao", department: "HR", category: "Recruitment", description: "LinkedIn Recruiter subscription — June", amount: 2800, status: "pending", receiptAttached: false },
+  { id: "exp-007", date: "2026-06-10", submittedBy: "Rahul Mehta", department: "Sales", category: "Travel", description: "Hotel accommodation — Sharjah client visits (3 nights)", amount: 3600, status: "reimbursed", receiptAttached: true },
   { id: "exp-008", date: "2026-06-08", submittedBy: "Arjun Sharma", department: "Engineering", category: "Software", description: "AWS usage overage — May billing cycle", amount: 41200, status: "approved", receiptAttached: true },
   { id: "exp-009", date: "2026-06-05", submittedBy: "Pooja Verma", department: "Marketing", category: "Advertising", description: "Google Ads campaign — June ERP awareness drive", amount: 35000, status: "rejected", receiptAttached: true },
   { id: "exp-010", date: "2026-06-03", submittedBy: "Vikram Nair", department: "Operations", category: "Maintenance", description: "Office AC servicing and filter replacement", amount: 7600, status: "reimbursed", receiptAttached: true },

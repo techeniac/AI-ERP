@@ -48,7 +48,7 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
     { type: "call", description: `Introductory call with ${lead.contactName}. Discussed pain points in current ERP system.`, date: lead.createdAt },
     { type: "email", description: "Sent product overview deck and pricing proposal.", date: lead.updatedAt },
     { type: "meeting", description: `Product demo scheduled. ${lead.contactName} brought in 2 IT team members.`, date: lead.expectedCloseDate ?? lead.updatedAt },
-    { type: "note", description: "Decision expected within 2 weeks. Budget approved at ₹18L. Key concern: data migration timeline.", date: lead.updatedAt },
+    { type: "note", description: "Decision expected within 2 weeks. Budget approved at AED 180K. Key concern: data migration timeline.", date: lead.updatedAt },
   ].filter((_, i) => i < 3);
 
   return (
@@ -251,7 +251,7 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
                 { label: "Email", value: lead.email },
                 { label: "Phone", value: lead.phone ?? "—" },
                 { label: "Industry", value: lead.industry ?? "—" },
-                { label: "Currency", value: "INR" },
+                { label: "Currency", value: lead.currency ?? "AED" },
                 { label: "Credit Terms", value: "Net 30" },
               ].map((row) => (
                 <div key={row.label} className="flex items-center justify-between gap-3">

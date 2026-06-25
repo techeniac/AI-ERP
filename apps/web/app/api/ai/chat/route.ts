@@ -21,7 +21,7 @@ Rules:
 - When asked to "create" something, describe the draft action clearly and say "Review & confirm to proceed"
 - Never make up specific financial figures — acknowledge you'd query the live database in production
 - Keep responses under 250 words unless the user explicitly asks for detail
-- Use ₹ for INR amounts and $ for USD amounts
+- Use "AED" for UAE Dirham amounts and "$" for USD amounts
 
 You are operating in PHASE 1 (demo mode) — data is mock/demo. Acknowledge this when relevant.`;
 

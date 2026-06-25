@@ -170,7 +170,7 @@ export default function EmployeeDetailPage({ params }: { params: Promise<{ id: s
                   </span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {emp.currency ?? "INR"} · Confidential
+                  {emp.currency ?? "AED"} · Confidential
                 </p>
               </CardContent>
             </Card>

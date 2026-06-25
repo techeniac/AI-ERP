@@ -37,7 +37,7 @@ export default function OrganizationsPage() {
   const [formName, setFormName] = useState("");
   const [formPlan, setFormPlan] = useState<OrgPlan>("starter");
   const [formIndustry, setFormIndustry] = useState("");
-  const [formCountry, setFormCountry] = useState("India");
+  const [formCountry, setFormCountry] = useState("United Arab Emirates");
   const [formEmail, setFormEmail] = useState("");
 
   const derivedSlug = formName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -52,7 +52,7 @@ export default function OrganizationsPage() {
       plan: formPlan,
       status: "trial",
       industry: formIndustry.trim() || "Other",
-      country: formCountry.trim() || "India",
+      country: formCountry.trim() || "United Arab Emirates",
       adminEmail: formEmail.trim(),
       userCount: 1,
       mrr: 0,
@@ -67,7 +67,7 @@ export default function OrganizationsPage() {
     setFormName("");
     setFormPlan("starter");
     setFormIndustry("");
-    setFormCountry("India");
+    setFormCountry("United Arab Emirates");
     setFormEmail("");
     toast.success("Organisation created");
   }
@@ -228,7 +228,7 @@ export default function OrganizationsPage() {
               <Label htmlFor="org-country">Country</Label>
               <Input
                 id="org-country"
-                placeholder="e.g. India"
+                placeholder="e.g. United Arab Emirates"
                 value={formCountry}
                 onChange={(e) => setFormCountry(e.target.value)}
               />
