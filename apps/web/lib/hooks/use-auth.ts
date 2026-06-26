@@ -12,7 +12,8 @@ export function useAuth() {
   function signIn(user: User) {
     setUser(user);
     const { isOnboarded: alreadyOnboarded } = useAuthStore.getState();
-    if (!alreadyOnboarded) {
+    const isOrgAdmin = user.role === "super_admin";
+    if (isOrgAdmin && !alreadyOnboarded) {
       router.push("/onboarding");
     } else {
       router.push("/dashboard");

@@ -16,17 +16,20 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const aiPanelOpen = useUIStore((s) => s.aiPanelOpen);
 
+  const currentUser = useAuthStore((s) => s.currentUser);
+  const isOrgAdmin = currentUser?.role === "super_admin";
+
   useEffect(() => {
     if (!hasHydrated) return;
     if (!isAuthenticated) {
       router.replace("/login");
-    } else if (!isOnboarded) {
+    } else if (isOrgAdmin && !isOnboarded) {
       router.replace("/onboarding");
     }
-  }, [isAuthenticated, isOnboarded, hasHydrated, router]);
+  }, [isAuthenticated, isOnboarded, isOrgAdmin, hasHydrated, router]);
 
-  // Show spinner while store is hydrating OR if not authenticated / not onboarded yet
-  if (!hasHydrated || !isAuthenticated || !isOnboarded) {
+  // Show spinner while hydrating; also block render if admin hasn't completed onboarding
+  if (!hasHydrated || !isAuthenticated || (isOrgAdmin && !isOnboarded)) {
     return (
       <div className="flex h-screen items-center justify-center">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-[var(--brand-navy)] border-t-transparent" />
