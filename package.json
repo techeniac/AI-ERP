@@ -8,8 +8,8 @@
     }
   },
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build",
+    "dev": "node init && pnpm --filter web dev",
+    "build": "node init && pnpm --filter web build",
     "lint": "pnpm --filter web lint",
     "typecheck": "pnpm --filter web exec tsc --noEmit",
     "prepare": "husky"
