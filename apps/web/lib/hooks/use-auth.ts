@@ -6,12 +6,17 @@ import type { User, Resource, ResourceAction } from "@/lib/types";
 import { canAccessModule } from "@/lib/utils/permissions";
 
 export function useAuth() {
-  const { currentUser, isAuthenticated, setUser, logout, hasPermission } = useAuthStore();
+  const { currentUser, isAuthenticated, isOnboarded, setUser, logout, setOnboarded, hasPermission } = useAuthStore();
   const router = useRouter();
 
   function signIn(user: User) {
     setUser(user);
-    router.push("/dashboard");
+    const { isOnboarded: alreadyOnboarded } = useAuthStore.getState();
+    if (!alreadyOnboarded) {
+      router.push("/onboarding");
+    } else {
+      router.push("/dashboard");
+    }
   }
 
   function signOut() {
@@ -31,8 +36,10 @@ export function useAuth() {
   return {
     user: currentUser,
     isAuthenticated,
+    isOnboarded,
     signIn,
     signOut,
+    setOnboarded,
     can,
     canAccess,
     role: currentUser?.role ?? null,
